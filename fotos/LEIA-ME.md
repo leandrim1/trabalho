@@ -20,3 +20,13 @@ sem repetir imagem entre atrações. O campo `credito` (autor e licença) é imp
 `posicao` (opcional) ajusta o enquadramento, ex.: `"50% 30%"`.
 
 Depois de colocar as fotos: `node src/construir.mjs` regenera o PDF.
+
+## Estado atual
+As seis fotografias foram fornecidas pelo grupo e já estão em uso (`fotos.json`).
+- **Jardim Botânico**: 640 × 480 px. Boa na galeria, mas fica macia se a capa for impressa em A4
+  (≈ 77 dpi). Para impressão, troque por uma versão ≥ 1600 px de largura.
+- **Parque Barigui**: foto vertical com a assinatura "AlexandreKamimura" na própria imagem;
+  o recorte da galeria mantém a assinatura visível.
+- Nenhum crédito/licença foi cadastrado, pois a autoria das imagens não foi informada
+  (não foi inventada). Se forem usadas fora do uso escolar, confirme a autoria e preencha `credito`.
+- A capa reaproveita a foto do Jardim Botânico; as miniaturas do roteiro reaproveitam as da galeria.

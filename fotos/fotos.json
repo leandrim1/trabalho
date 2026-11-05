@@ -1,0 +1,8 @@
+{
+  "jardim-botanico":      { "arquivo": "jardim-botanico.jpg",      "posicao": "50% 48%" },
+  "opera-de-arame":       { "arquivo": "opera-de-arame.jpg",       "posicao": "50% 85%" },
+  "parque-tangua":        { "arquivo": "parque-tangua.jpg",        "posicao": "50% 41%" },
+  "museu-oscar-niemeyer": { "arquivo": "museu-oscar-niemeyer.jpg", "posicao": "50% 36%" },
+  "parque-barigui":       { "arquivo": "parque-barigui.jpg",       "posicao": "50% 68%" },
+  "bosque-alemao":        { "arquivo": "bosque-alemao.jpg",        "posicao": "50% 46%" }
+}

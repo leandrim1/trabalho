@@ -87,7 +87,7 @@ function foto(slug, rotulo, { fallback } = {}) {
 }
 function urlFotoRoteiro(slug, fallback) {
   const m = infoFoto(slug) || (fallback && infoFoto(fallback));
-  return m ? String(pathToFileURL(path.join(FOTOS_DIR, m.arquivo))) : null;
+  return m ? { url: String(pathToFileURL(path.join(FOTOS_DIR, m.arquivo))), pos: m.posicao || '50% 50%' } : null;
 }
 
 /* ==========================================================================
@@ -323,7 +323,7 @@ paginas.push(pagina(content(`
   ${sec(`<h2>Sugestão de roteiro de cinco dias</h2>
     ${ROTEIRO.map(([n, titulo, desc, slug]) => {
       const u = urlFotoRoteiro(slug);
-      return `<div class="dia"><div class="tile">${u ? `<img src="${u}" alt="${titulo}">` : ''}<div class="nr">${n}<small>DIA</small></div></div>
+      return `<div class="dia"><div class="tile">${u ? `<img src="${u.url}" alt="${titulo}" style="object-position:${u.pos}">` : ''}<div class="nr">${n}<small>DIA</small></div></div>
         <div class="tx"><h3>${n} dia — ${titulo}</h3><p>${desc}</p></div></div>`;
     }).join('')}`)}
 `)));
