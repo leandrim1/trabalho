@@ -147,6 +147,31 @@ function montar() {
     ${sec(`<p class="lead">A melancia oferece diversos benefícios quando faz parte de uma alimentação equilibrada.</p>`, 'margin-bottom:6mm')}
     <div class="ben">${ben.map(([i, t, d]) => `<div class="bcard"><div class="ib">${icone(i, 26)}</div><h3>${t}</h3><p>${cap(d)}</p></div>`).join('')}</div>`));
 
+  /* ---- 6b. Rins (parte 1) ---- */
+  P.push(pagina('Rins e saúde', `
+    ${titulo('A <em>melancia</em> e a saúde dos rins')}
+    ${sec(`<p class="lead">A melancia pode contribuir para a saúde dos rins principalmente por possuir aproximadamente 92% de água. Essa característica ajuda na hidratação do organismo e na produção de urina, processo importante para o funcionamento do sistema urinário.</p>`, 'margin-bottom:5mm')}
+    ${sec(`<div class="fluxo"><div class="fp"><span class="fi">${icone('drop', 24)}</span><b>Água</b><small>92% da fruta</small></div><span class="fa"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4l8 8-8 8"/></svg></span><div class="fp"><span class="fi">${icone('wave', 24)}</span><b>Hidratação</b><small>do organismo</small></div><span class="fa"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4l8 8-8 8"/></svg></span><div class="fp"><span class="fi">${icone('rim', 24)}</span><b>Filtragem</b><small>do sangue</small></div><span class="fa"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4l8 8-8 8"/></svg></span><div class="fp"><span class="fi">${icone('ciclo', 24)}</span><b>Eliminação</b><small>pela urina</small></div></div>`, 'margin-bottom:6mm')}
+    <div class="ben"><div class="bcard rimc"><div class="ib">${icone('rim', 26)}</div><span class="nb">01</span><h3>Ajuda no funcionamento dos rins</h3><p>A água presente na melancia contribui para manter o organismo hidratado. Quando estamos bem hidratados, os rins conseguem realizar melhor a filtragem do sangue e a eliminação de resíduos pela urina.</p></div><div class="bcard rimc"><div class="ib">${icone('pedras', 26)}</div><span class="nb">02</span><h3>Pode ajudar na prevenção de pedras nos rins</h3><p>Beber água suficiente ajuda a deixar a urina menos concentrada, diminuindo a possibilidade de formação de alguns tipos de cálculos renais (pedras nos rins). Como possui muita água, a melancia pode contribuir para essa hidratação.</p></div><div class="bcard rimc"><div class="ib">${icone('mineral', 26)}</div><span class="nb">03</span><h3>Contém potássio</h3><p>A melancia possui potássio, um mineral importante para o funcionamento dos músculos, dos nervos e para o equilíbrio de líquidos no organismo.</p><p class="avisoc">${icone('warn', 16)} <span>Entretanto, pessoas com problemas renais podem precisar controlar o consumo desse mineral.</span></p></div><div class="bcard rimc"><div class="ib">${icone('filtro', 26)}</div><span class="nb">04</span><h3>Ajuda na eliminação de resíduos</h3><p>Os rins filtram o sangue e eliminam substâncias que o organismo não precisa por meio da urina. A hidratação adequada ajuda nesse processo natural.</p></div></div>
+`));
+
+  /* ---- 6c. Rins (parte 2) ---- */
+  P.push(pagina('Rins e saúde', `
+    ${titulo('A <em>melancia</em> limpa os rins?')}
+    ${sec(`<div class="duo">
+      <div class="pn no"><small>Crença popular</small><h2>O que muita gente diz</h2>
+        <p>Existe uma crença popular de que a melancia limpa os rins. Na realidade, ela não realiza uma limpeza especial nem remove pedras já existentes.</p></div>
+      <div class="pn ok"><small>O que realmente acontece</small><h2>O papel da hidratação</h2>
+        <p>O que acontece é que sua quantidade de água contribui para a hidratação, ajudando os rins a desempenharem suas funções.</p></div>
+    </div>`, 'margin-bottom:8mm')}
+    ${sec(`<h1 style="font-size:24pt">Quem tem problemas nos rins pode comer <em>melancia</em>?</h1><span class="regra"></span>
+      <div class="licop" style="border-left-color:var(--r600)"><div style="color:var(--r600)">${icone('rim', 34)}</div><div>
+        <h3>Depende da condição de saúde</h3>
+        <p>Pessoas com doença renal podem precisar controlar a quantidade de líquidos e potássio consumidos.</p></div></div>`, 'margin-bottom:6mm')}
+    ${sec(`<div class="alerta"><div class="x">${icone('medico', 34)}</div><div><b>Por isso, devem seguir as orientações de um médico ou nutricionista.</b>
+      <p>As informações desta página são escolares e não substituem avaliação profissional.</p></div></div>`)}
+    <div style="flex:1;display:flex;align-items:flex-end;justify-content:center;padding-top:4mm">${svg('0 0 200 76', '92mm', `${folha({ x: 32, y: 66, len: 38, ang: -22, cor: '#3f9a4f' })}${folha({ x: 168, y: 66, len: 38, ang: 202, cor: '#3f9a4f' })}${inteira({ cx: 100, cy: 44, r: 30 })}${inteira({ cx: 52, cy: 56, r: 17 })}${inteira({ cx: 148, cy: 56, r: 17 })}`)}</div>`));
+
   /* ---- 7. Câncer ---- */
   P.push(pagina('Melancia e ciência', `
     ${titulo('A <em>melancia</em> pode prevenir ou curar o câncer?')}
@@ -269,8 +294,9 @@ function montar() {
       <li>A melancia não cura o câncer e não substitui tratamentos médicos.</li>
       <li>Em 2025, o Brasil produziu aproximadamente 2,25 milhões de toneladas, segundo o IBGE.</li>
       <li>Casca e sementes podem ser aproveitadas, reduzindo o desperdício.</li>
-      <li>O cultivo exige cuidados com água, solo e resíduos.</li></ul></div>`)}
-    <div style="flex:1;display:flex;align-items:flex-end;justify-content:center;margin-bottom:0">${svg('0 0 200 104', '128mm', `${folha({ x: 4, y: 98, len: 50, ang: -22, cor: '#3f9a4f' })}${folha({ x: 196, y: 98, len: 50, ang: 202, cor: '#3f9a4f' })}${fatia({ cx: 100, cy: 8, R: 92 })}`)}</div>`));
+      <li>O cultivo exige cuidados com água, solo e resíduos.</li>
+      <li class="full">A hidratação ajuda os rins a filtrar o sangue, mas a melancia não limpa os rins nem remove pedras já existentes.</li></ul></div>`)}
+    <div style="flex:1;display:flex;align-items:flex-end;justify-content:center;margin-bottom:0">${svg('0 0 200 104', '104mm', `${folha({ x: 4, y: 98, len: 50, ang: -22, cor: '#3f9a4f' })}${folha({ x: 196, y: 98, len: 50, ang: 202, cor: '#3f9a4f' })}${fatia({ cx: 100, cy: 8, R: 92 })}`)}</div>`));
 
   /* ---- 14. Fotos (somente no final) ---- */
   const gal = [['melancia-polpa', 'Melancia e sua polpa'], ['variedades', 'Variedades da fruta'], ['sementes', 'Sementes'], ['casca', 'Aproveitamento da casca']];
