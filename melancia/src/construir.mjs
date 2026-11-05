@@ -50,22 +50,15 @@ function montar() {
   /* ---- 1. Capa ---- */
   n += 1;
   const arteCapa = `
-    <g opacity=".95">${folha({ x: 12, y: 150, len: 70, ang: -28, cor: '#2f7d44' })}${folha({ x: 5, y: 170, len: 58, ang: -52, cor: '#3f9a4f', op: .9 })}
-    ${folha({ x: 205, y: 142, len: 72, ang: 208, cor: '#2f7d44' })}${folha({ x: 208, y: 168, len: 58, ang: 230, cor: '#3f9a4f', op: .9 })}</g>
-    <g transform="rotate(-5 105 100)">${fatia({ cx: 105, cy: 92, R: 96 })}</g>
-    ${[[22, 70, 2.4, 20], [34, 98, 1.8, -30], [188, 74, 2.6, 40], [176, 52, 1.8, 10], [14, 118, 2, 60], [198, 112, 2, -20], [60, 36, 1.6, 30], [152, 30, 1.7, -40]].map(([x, y, s, a]) => semente({ x, y, s, ang: a, cor: '#cfe6bd', op: .55 })).join('')}`;
+    <g opacity=".95">${folha({ x: 10, y: 190, len: 78, ang: -26, cor: '#2f7d44' })}${folha({ x: 3, y: 211, len: 62, ang: -50, cor: '#3f9a4f', op: .9 })}
+    ${folha({ x: 202, y: 184, len: 80, ang: 206, cor: '#2f7d44' })}${folha({ x: 208, y: 209, len: 62, ang: 230, cor: '#3f9a4f', op: .9 })}</g>
+    <g transform="rotate(-4 105 124)">${fatia({ cx: 105, cy: 118, R: 103 })}</g>
+    ${[[20, 86, 2.4, 20], [34, 116, 1.8, -30], [190, 90, 2.6, 40], [176, 64, 1.8, 10], [12, 146, 2, 60], [200, 136, 2, -20], [58, 44, 1.6, 30], [154, 38, 1.7, -40], [96, 36, 1.5, 15]].map(([x, y, sz, a]) => semente({ x, y, s: sz, ang: a, cor: '#cfe6bd', op: .5 })).join('')}`;
   P.push(`<section class="page capa">
-    <div class="painel"><svg class="arte" viewBox="0 0 210 182" preserveAspectRatio="xMidYMid slice">${arteCapa}</svg>
+    <div class="painel"><svg class="arte" viewBox="0 0 210 232" preserveAspectRatio="xMidYMid slice">${arteCapa}</svg>
       <div class="tit"><div class="kick">Trabalho escolar</div><h1><span>A <span style="display:inline;color:var(--r500)">MELANCIA</span></span></h1></div></div>
-    <div class="base"><p class="sub">Composição Química, Benefícios e Importância no Brasil</p>
-      <div class="campos">
-        <div class="campo largo"><label>Nome do aluno</label><i class="fld" data-name="aluno"></i></div>
-        <div class="campo largo"><label>Escola</label><i class="fld" data-name="escola"></i></div>
-        <div class="campo"><label>Professor(a)</label><i class="fld" data-name="professor"></i></div>
-        <div class="campo"><label>Turma</label><i class="fld" data-name="turma"></i></div>
-        <div class="campo"><label>Disciplina</label><i class="fld" data-name="disciplina"></i></div>
-        <div class="campo"><label>Cidade e ano</label><i class="fld" data-name="cidade_ano"></i></div>
-      </div></div></section>`);
+    <div class="base"><span class="regra"></span><p class="sub">Composição Química, Benefícios e Importância no Brasil</p></div>
+  </section>`);
 
   /* ---- 2. Introdução ---- */
   P.push(pagina('Introdução', `

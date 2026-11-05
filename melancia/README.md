@@ -1,6 +1,6 @@
 # A Melancia — trabalho escolar (revista científica ilustrada)
 
-PDF final: `a_melancia.pdf` (A4, 15 páginas). Capa com campos editáveis (aluno, escola, professor, turma, disciplina, cidade e ano).
+PDF final: `a_melancia.pdf` (A4, 15 páginas). Na página de referências há três linhas editáveis para registrar fontes adicionais.
 
 ```bash
 npm install --ignore-scripts      # instala pdf-lib (campos editáveis)
