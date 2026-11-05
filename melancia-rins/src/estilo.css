@@ -1,0 +1,149 @@
+/* ==========================================================================
+   A MELANCIA E A SAÚDE DOS RINS — trabalho escolar (A4 vertical)
+   Títulos: Playfair Display · Textos: Source Sans 3 (embutidas no PDF)
+   Paleta: verde-melancia + vermelho-polpa + azul-água + creme
+   ========================================================================== */
+@font-face{font-family:'Playfair';font-weight:600;src:url('../fontes/Playfair-600.ttf')}
+@font-face{font-family:'Playfair';font-weight:700;src:url('../fontes/Playfair-700.ttf')}
+@font-face{font-family:'Playfair';font-weight:800;src:url('../fontes/Playfair-800.ttf')}
+@font-face{font-family:'Playfair';font-weight:900;src:url('../fontes/Playfair-900.ttf')}
+@font-face{font-family:'Playfair';font-weight:600;font-style:italic;src:url('../fontes/Playfair-Italic-600.ttf')}
+@font-face{font-family:'Playfair';font-weight:700;font-style:italic;src:url('../fontes/Playfair-Italic-700.ttf')}
+@font-face{font-family:'Source Sans';font-weight:400;src:url('../fontes/SourceSans-400.ttf')}
+@font-face{font-family:'Source Sans';font-weight:400;font-style:italic;src:url('../fontes/SourceSans-Italic-400.ttf')}
+@font-face{font-family:'Source Sans';font-weight:600;src:url('../fontes/SourceSans-600.ttf')}
+@font-face{font-family:'Source Sans';font-weight:700;src:url('../fontes/SourceSans-700.ttf')}
+
+:root{
+  --v900:#103a25; --v800:#17492e; --v700:#1f6b3a; --v500:#3f9a4f; --v300:#9ccf86; --v200:#cfe6bd; --v100:#e8f2dc;
+  --r700:#b81f3b; --r600:#d9304a; --r500:#ea4a63; --r300:#f6a3b0; --r100:#fde6e9;
+  --a700:#1b5584; --a600:#2574b5; --a400:#6aa9da; --a100:#e4eff9;
+  --am700:#8a6a12; --am500:#d9a62b; --am100:#fbf1d8;
+  --cr:#fbf6ea; --cr2:#f3ead3; --cr3:#e9dcbc; --txt:#222a24; --cz:#69716a; --lin:#d9d0b8;
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:'Source Sans',sans-serif;font-size:12.5pt;line-height:1.55;color:var(--txt);background:var(--cr)}
+
+/* ---------- Página ---------- */
+.page{position:relative;width:210mm;height:296.6mm;overflow:hidden;break-after:page;background:var(--cr)}
+.page:last-child{break-after:auto}
+.content{position:absolute;left:20mm;right:20mm;top:25mm;bottom:21mm;display:flex;flex-direction:column}
+.cab{position:absolute;left:20mm;right:20mm;top:10mm;display:flex;justify-content:space-between;align-items:center;
+  font-size:9.5pt;letter-spacing:2.2pt;text-transform:uppercase;color:var(--cz);padding-bottom:2.4mm;border-bottom:.3mm solid var(--lin);font-weight:600}
+.cab .m{display:flex;align-items:center;gap:2.4mm;color:var(--v700)}
+.cab .m i{display:inline-block;width:3mm;height:3mm;border-radius:50%;background:var(--r600);box-shadow:0 0 0 .6mm var(--v500) inset}
+.rod{position:absolute;left:20mm;right:20mm;bottom:9mm;text-align:center;font-family:'Playfair';font-style:italic;font-weight:600;font-size:11pt;color:var(--v700);
+  display:flex;align-items:center;justify-content:center;gap:4mm}
+.rod::before,.rod::after{content:'';width:14mm;border-top:.3mm solid var(--lin)}
+
+/* ---------- Tipografia ---------- */
+h1{font-family:'Playfair';font-weight:800;font-size:29pt;line-height:1.1;color:var(--v900);letter-spacing:-.2pt;margin:0 0 5mm}
+h1 em{font-style:italic;color:var(--r600);font-weight:700}
+h2{font-family:'Playfair';font-weight:700;font-size:18pt;line-height:1.18;color:var(--v800);margin:0 0 3mm}
+h3{font-size:13.5pt;font-weight:700;line-height:1.25;color:var(--v800);margin:0 0 1.6mm}
+p{margin:0 0 3.6mm}
+p:last-child{margin-bottom:0}
+p.lead{font-size:13.5pt;line-height:1.55}
+.regra{display:block;width:22mm;height:1.2mm;border-radius:1mm;background:linear-gradient(90deg,var(--r600),var(--a600));margin:0 0 5mm}
+.sec{margin-bottom:7mm}
+.sec:last-child{margin-bottom:0}
+.ic{display:inline-block;vertical-align:middle;flex:none}
+.nw{white-space:nowrap}
+
+/* numeração do item dentro do título da página */
+.item{display:flex;align-items:center;gap:4mm;margin-bottom:3.4mm}
+.item .nn{flex:0 0 auto;font-family:'Playfair';font-weight:900;font-size:13pt;color:#fff;background:var(--r600);
+  width:12mm;height:12mm;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1}
+.item .et{font-size:9.4pt;letter-spacing:2.4pt;text-transform:uppercase;color:var(--cz);font-weight:700}
+
+/* ---------- Capa ---------- */
+.capa .painel{position:absolute;left:0;right:0;top:0;height:170mm;background:radial-gradient(120% 95% at 72% 100%,#1d5a35 0%,#133f27 55%,#0d2f1d 100%);overflow:hidden}
+.capa .painel svg.arte{position:absolute;left:0;top:0;width:100%;height:100%}
+.capa .tit{position:absolute;left:20mm;top:26mm;right:20mm;color:var(--cr)}
+.capa .kick{font-size:10.5pt;letter-spacing:4pt;text-transform:uppercase;color:var(--v300);font-weight:600;margin-bottom:5mm;display:flex;align-items:center;gap:3mm}
+.capa .kick::before{content:'';width:12mm;border-top:.5mm solid var(--r500)}
+.capa h1{font-family:'Playfair';font-weight:900;font-size:44pt;line-height:1.02;color:var(--cr);letter-spacing:-.6pt;margin:0}
+.capa h1 .r{color:var(--r500)}
+.capa .base{position:absolute;left:20mm;right:20mm;top:182mm}
+.capa .sub{font-family:'Playfair';font-style:italic;font-weight:600;font-size:19pt;line-height:1.25;color:var(--v800);margin:0 0 7mm;max-width:158mm}
+.capa .marcas{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.capa .marcas div{background:#fff;border:.3mm solid var(--lin);border-radius:3.4mm;padding:4mm 4mm 4.4mm;line-height:1.25}
+.capa .marcas .ii{width:11mm;height:11mm;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:2.4mm}
+.capa .marcas b{display:block;font-family:'Playfair';font-weight:700;font-size:13.5pt;color:var(--v900)}
+.capa .marcas small{display:block;font-size:10.4pt;color:var(--cz)}
+
+/* ---------- Fluxo ---------- */
+.fluxo{display:flex;align-items:center;justify-content:space-between;gap:2mm;background:var(--v900);border-radius:4mm;padding:4.6mm 5mm}
+.fluxo .fp{flex:1;text-align:center;color:var(--cr);line-height:1.2}
+.fluxo .fi{display:flex;align-items:center;justify-content:center;width:11.5mm;height:11.5mm;border-radius:50%;background:rgba(255,255,255,.1);color:var(--r300);margin:0 auto 1.8mm}
+.fluxo .fp b{display:block;font-family:'Playfair';font-weight:700;font-size:12.5pt}
+.fluxo .fp small{display:block;font-size:9.6pt;color:var(--v300)}
+.fluxo .fa{flex:0 0 auto;color:var(--r500);display:flex;align-items:center;padding-bottom:4mm}
+
+/* ---------- Índice das perguntas ---------- */
+.idx{display:grid;grid-template-columns:1fr 1fr;gap:3.4mm 5mm}
+.idx div{display:flex;gap:3.4mm;align-items:flex-start;background:#fff;border:.3mm solid var(--lin);border-radius:3mm;padding:3.4mm 4mm;line-height:1.3;font-size:11.8pt;font-weight:600;color:var(--v800)}
+.idx b{flex:0 0 auto;font-family:'Playfair';font-weight:900;color:var(--r500);font-size:14pt;line-height:1.05}
+
+/* ---------- Destaques ---------- */
+.destaque{display:flex;align-items:center;gap:6mm;background:var(--v900);color:var(--cr);border-radius:4.5mm;padding:6mm 7mm}
+.destaque b{font-family:'Playfair';font-weight:900;font-size:38pt;color:var(--r500);line-height:1;white-space:nowrap}
+.destaque span{font-size:12.5pt;line-height:1.4}
+.quadro{background:#fff;border:.3mm solid var(--lin);border-radius:4.5mm;padding:5mm 5.4mm}
+.quadro.azul{background:var(--a100);border-color:#c5ddf1}
+.quadro.verde{background:var(--v100);border-color:var(--v300)}
+.quadro.creme{background:var(--cr2);border-color:var(--cr3)}
+.nota-lateral{display:flex;gap:4.4mm;align-items:flex-start;border-left:1.4mm solid var(--r600);padding:1mm 0 1mm 5mm}
+.nota-lateral.verde{border-left-color:var(--v500)}
+.nota-lateral.azul{border-left-color:var(--a600)}
+.alerta{display:flex;gap:6mm;align-items:center;background:var(--r600);color:#fff;border-radius:4.5mm;padding:6.5mm 7.5mm}
+.alerta.verde{background:var(--v900)}
+.alerta .x{flex:0 0 17mm;height:17mm;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center}
+.alerta b{display:block;font-family:'Playfair';font-weight:800;font-size:18.5pt;line-height:1.18;margin-bottom:2mm}
+.alerta p{font-size:11.8pt;margin:0;opacity:.95}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.pn{border-radius:4mm;padding:5.6mm 5.6mm 6mm}
+.pn.ok{background:var(--v100);border:.4mm solid var(--v300)}
+.pn.no{background:var(--cr2);border:.4mm solid var(--cr3)}
+.pn small{display:block;font-size:9pt;letter-spacing:2pt;text-transform:uppercase;font-weight:700;margin-bottom:2mm}
+.pn.ok small{color:var(--v700)} .pn.no small{color:var(--r700)}
+.pn h2{font-size:16pt;margin-bottom:3mm}
+.pn p{font-size:12pt}
+.fig{background:#fff;border:.3mm solid var(--lin);border-radius:4.5mm;padding:5mm 6mm 4mm}
+.fig .cap{display:block;margin-top:3mm;padding-top:2.6mm;border-top:.25mm solid var(--lin);font-size:10.6pt;line-height:1.4;color:var(--cz)}
+
+/* ---------- Cartões ---------- */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.card{background:#fff;border:.3mm solid var(--lin);border-radius:4mm;padding:5mm 5.4mm 5.4mm;position:relative}
+.card .ib{width:13mm;height:13mm;border-radius:50%;background:var(--r100);color:var(--r600);display:flex;align-items:center;justify-content:center;margin-bottom:3mm}
+.card.az .ib{background:var(--a100);color:var(--a600)}
+.card.vd .ib{background:var(--v100);color:var(--v700)}
+.card h3{font-family:'Playfair';font-size:15pt;margin-bottom:1.6mm}
+.card p{font-size:11.8pt;line-height:1.45}
+.aviso{display:flex;gap:2.6mm;align-items:flex-start;margin:3mm 0 0;padding-top:2.6mm;border-top:.25mm solid var(--lin);
+  font-size:11pt;line-height:1.38;color:var(--r700);font-weight:600}
+.aviso svg{flex:none;margin-top:.5mm}
+
+/* ---------- Síntese ---------- */
+.sint{background:var(--v900);color:var(--cr);border-radius:5mm;padding:6.5mm 7.5mm}
+.sint h2{color:var(--cr);font-size:16.5pt;margin-bottom:3.6mm}
+.sint ul{list-style:none;display:grid;gap:3mm}
+.sint li{display:flex;gap:3.4mm;font-size:12pt;line-height:1.38;align-items:flex-start}
+.sint li::before{content:'';flex:0 0 4mm;height:4mm;border-radius:50%;background:var(--r500);margin-top:1.6mm}
+
+/* ---------- Galeria de fotos ---------- */
+.galeria{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+.gc figure{margin:0;overflow:hidden;border-radius:4mm;height:72mm;position:relative;background:#fff;border:.3mm solid var(--lin)}
+.gc figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gc figure.ph{background:linear-gradient(135deg,var(--v100),var(--r100));border:.35mm dashed var(--v300);display:flex;align-items:center;justify-content:center;color:var(--v700);font-weight:700;letter-spacing:1.4pt;text-transform:uppercase;font-size:10pt}
+.gc h3{font-family:'Playfair';font-size:14.5pt;margin:3mm 0 1mm}
+.gc p{font-size:11pt;line-height:1.4;color:var(--cz);margin:0}
+
+/* ---------- Referências ---------- */
+.nota{font-size:11pt;color:var(--cz);line-height:1.5}
+.linha-fld{border-bottom:.3mm solid var(--cz);height:9mm;position:relative;margin-bottom:2mm}
+.linha-fld .fld{position:absolute;left:0;right:0;bottom:.6mm;height:7mm}
+.cred{font-size:10.6pt;color:var(--cz);line-height:1.55}
+.cred b{color:var(--v800)}

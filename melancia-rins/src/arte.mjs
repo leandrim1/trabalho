@@ -1,5 +1,4 @@
-// Ilustrações vetoriais (SVG) do trabalho "A Melancia": fatias, melancias inteiras, folhas, ícones e mapa.
-import fs from 'node:fs';
+// Ilustrações vetoriais (SVG) do trabalho "A melancia e a saúde dos rins".
 
 let uid = 0;
 const nid = (p) => `${p}${++uid}`;
@@ -113,24 +112,64 @@ export function icone(nome, tam = 24, extra = '') {
   return `<svg class="ic" viewBox="0 0 24 24" width="${tam}" height="${tam}" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ${extra}>${I[nome]}</svg>`;
 }
 
-/* Parentes da melancia (melão, pepino, abóbora) — ícones simples */
-export function melao(s = 34) {
-  return `<svg viewBox="0 0 40 40" width="${s}" height="${s}"><circle cx="20" cy="21" r="15" fill="#e6c56b"/><g stroke="#b89438" stroke-width=".9" fill="none" opacity=".8"><path d="M8 14c8 4 16 4 24 0M6 22c9 4 19 4 28 0M9 30c7 3 15 3 22 0M14 8c-3 8-3 17 0 26M22 6c-2 9-2 19 0 29M29 8c3 8 3 17 0 25"/></g></svg>`;
-}
-export function pepino(s = 34) {
-  return `<svg viewBox="0 0 40 40" width="${s}" height="${s}"><g transform="rotate(-35 20 20)"><rect x="3" y="12" width="34" height="16" rx="8" fill="#4f9a45"/><rect x="3" y="12" width="34" height="16" rx="8" fill="none" stroke="#2f6e2c" stroke-width="1"/><g fill="#8cc774"><circle cx="10" cy="17" r="1"/><circle cx="17" cy="23" r="1"/><circle cx="24" cy="16" r="1"/><circle cx="30" cy="22" r="1"/></g></g></svg>`;
-}
-export function abobora(s = 34) {
-  return `<svg viewBox="0 0 40 40" width="${s}" height="${s}"><ellipse cx="20" cy="23" rx="16" ry="12.5" fill="#ef9a3c"/><g fill="none" stroke="#c9731d" stroke-width="1" opacity=".75"><path d="M20 10.5c-6 4-6 21 0 25M20 10.5c6 4 6 21 0 25M20 10.5c-12 3-12 22 0 25M20 10.5c12 3 12 22 0 25"/></g><path d="M20 11c0-4 1-6 4-7" stroke="#3f7a2e" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>`;
+/* ==========================================================================
+   Ilustrações específicas do trabalho sobre os rins
+   ========================================================================== */
+
+/* Rim em forma cheia (silhueta de feijão com o hilo voltado para dentro).
+   Desenhado numa caixa de 100 de altura e escalado por `alt`. */
+export function rimForma({ x, y, alt, flip = false, cor = '#e0314b', borda = '#9d1830' }) {
+  const k = alt / 100;
+  const d = 'M55 0a50 50 0 0 0 0 100c15 0 24-8 24-18 0-9-7-14-13-18-5-4-9-8-9-14s4-10 9-14c6-4 13-9 13-18C79 8 70 0 55 0z';
+  return `<g transform="translate(${x} ${y}) scale(${flip ? -k : k} ${k})">
+    <path d="${d}" fill="${cor}" stroke="${borda}" stroke-width="2.6"/>
+    <path d="M34 30c-9 6-14 12-14 20s5 14 14 20" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="5" stroke-linecap="round"/></g>`;
 }
 
-/* Mapa do Brasil (@svg-maps/brazil, CC BY 4.0) com os estados citados no trabalho em destaque */
-export function mapaBrasil(caminhoSvg, destacados) {
-  const bruto = fs.readFileSync(caminhoSvg, 'utf8');
-  const paths = [...bruto.matchAll(/<path\s+id="([a-z]{2})"\s+aria-label="([^"]+)"\s+d="([^"]+)"/g)];
-  if (paths.length !== 27) throw new Error(`Mapa: esperava 27 UFs, achei ${paths.length}`);
-  const alvo = new Set(destacados);
-  const corpo = paths.map(([, uf, nome, d]) =>
-    `<path class="uf${alvo.has(uf) ? ' hl' : ''}" data-uf="${uf}" d="${d}" fill="${alvo.has(uf) ? COR.r600 : COR.v200}" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"><title>${nome}</title></path>`).join('');
-  return `<svg viewBox="0 0 613 639" role="img" aria-label="Mapa do Brasil com os estados produtores citados em destaque">${corpo}</svg>`;
+/* Esquema do caminho: sangue com resíduos -> rins -> sangue filtrado + urina */
+export function diagramaRenal() {
+  const txt = (x, y, t, cor, anc = 'middle', tam = 6.4) =>
+    `<text x="${x}" y="${y}" text-anchor="${anc}" font-family="Source Sans" font-weight="700" font-size="${tam}" fill="${cor}">${t}</text>`;
+  const ponta = (x, y, ang, cor) =>
+    `<path d="M-4.4,-3.6 L0,0 L-4.4,3.6" transform="translate(${x} ${y}) rotate(${ang})" fill="none" stroke="${cor}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>`;
+  return `<svg viewBox="0 0 200 126" width="100%" role="img" aria-label="Esquema: o sangue com resíduos passa pelos rins, o sangue filtrado segue e os resíduos saem pela urina">
+    <path d="M14 30C44 30 66 38 88 48" fill="none" stroke="#d9304a" stroke-width="3.4" stroke-linecap="round"/>
+    ${ponta(89, 48.5, 24, '#d9304a')}
+    ${txt(14, 23, 'Sangue com resíduos', '#b81f3b', 'start')}
+    <path d="M112 48C134 38 156 30 186 30" fill="none" stroke="#2574b5" stroke-width="3.4" stroke-linecap="round"/>
+    ${ponta(186, 30, 0, '#2574b5')}
+    ${txt(186, 23, 'Sangue filtrado', '#2574b5', 'end')}
+    ${rimForma({ x: 40, y: 34, alt: 62 })}
+    ${rimForma({ x: 160, y: 34, alt: 62, flip: true })}
+    ${txt(66, 103, 'RIM', '#9d1830', 'middle', 6.2)}
+    ${txt(134, 103, 'RIM', '#9d1830', 'middle', 6.2)}
+    <path d="M100 62v44" fill="none" stroke="#e3a712" stroke-width="3.4" stroke-linecap="round" stroke-dasharray="7 4.4"/>
+    ${ponta(100, 107, 90, '#e3a712')}
+    ${txt(100, 121, 'Urina com resíduos', '#9a7208')}
+  </svg>`;
+}
+
+/* Dois copos: urina mais concentrada x urina menos concentrada */
+export function copos() {
+  const copo = (x, nivelCor, liq, cristais, rotulo, corRot) => {
+    const cp = `cp${x}`;
+    const crist = cristais.map(([cx, cy, r, rot]) =>
+      `<path d="M0,${-r} L${r * 0.7},0 L0,${r} L${-r * 0.7},0 Z" transform="translate(${cx} ${cy}) rotate(${rot})" fill="#6b5a2a" fill-opacity=".85"/>`).join('');
+    return `<g transform="translate(${x} 0)">
+      <defs><clipPath id="${cp}"><path d="M8 12h52v44a16 16 0 0 1-16 16H24a16 16 0 0 1-16-16z"/></clipPath></defs>
+      <path d="M8 12h52v44a16 16 0 0 1-16 16H24a16 16 0 0 1-16-16z" fill="#fff"/>
+      <g clip-path="url(#${cp})"><rect x="6" y="${liq}" width="56" height="70" fill="${nivelCor}"/>${crist}</g>
+      <path d="M8 12h52v44a16 16 0 0 1-16 16H24a16 16 0 0 1-16-16z" fill="none" stroke="#c7cfc9" stroke-width="2.2"/>
+      <path d="M4 12h60" stroke="#c7cfc9" stroke-width="2.6" stroke-linecap="round"/>
+      <text x="34" y="86" text-anchor="middle" font-family="Source Sans" font-weight="700" font-size="7" fill="${corRot}">${rotulo}</text>
+    </g>`;
+  };
+  return `<svg viewBox="0 0 200 94" width="100%" role="img" aria-label="Comparação entre urina mais concentrada e urina menos concentrada">
+    ${copo(10, '#d9a62b', 30, [[22, 46, 4.4, 15], [40, 56, 3.6, -20], [31, 64, 3, 40], [46, 40, 2.6, 10]], 'Urina mais concentrada', '#8a6a12')}
+    <path d="M92 44h16" stroke="#3f9a4f" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-4.4,-3.6 L0,0 L-4.4,3.6" transform="translate(109 44)" fill="none" stroke="#3f9a4f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="100" y="34" text-anchor="middle" font-family="Source Sans" font-weight="700" font-size="6.4" fill="#1f6b3a">mais</text>
+    <text x="100" y="41" text-anchor="middle" font-family="Source Sans" font-weight="700" font-size="6.4" fill="#1f6b3a">água</text>
+    ${copo(126, '#f0dd92', 22, [[36, 58, 2.6, 25]], 'Urina menos concentrada', '#1f6b3a')}
+  </svg>`;
 }
