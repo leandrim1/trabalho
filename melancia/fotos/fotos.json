@@ -1,0 +1,6 @@
+{
+  "melancia-polpa": { "arquivo": "melancia-polpa.jpg" },
+  "variedades":     { "arquivo": "variedades.jpg" },
+  "sementes":       { "arquivo": "sementes.jpg" },
+  "casca":          { "arquivo": "casca.jpg", "posicao": "50% 40%" }
+}
