@@ -1,0 +1,9 @@
+{
+  "capa":                 { "arquivo": "capa.jpg",                 "credito": "Foto: AUTOR / Wikimedia Commons (CC BY-SA 4.0)", "posicao": "50% 45%" },
+  "jardim-botanico":      { "arquivo": "jardim-botanico.jpg",      "credito": "Foto: AUTOR / Wikimedia Commons (LICENÇA)" },
+  "opera-de-arame":       { "arquivo": "opera-de-arame.jpg",       "credito": "Foto: AUTOR / Wikimedia Commons (LICENÇA)" },
+  "parque-tangua":        { "arquivo": "parque-tangua.jpg",        "credito": "Foto: AUTOR / Wikimedia Commons (LICENÇA)" },
+  "museu-oscar-niemeyer": { "arquivo": "museu-oscar-niemeyer.jpg", "credito": "Foto: AUTOR / Wikimedia Commons (LICENÇA)" },
+  "parque-barigui":       { "arquivo": "parque-barigui.jpg",       "credito": "Foto: AUTOR / Wikimedia Commons (LICENÇA)" },
+  "bosque-alemao":        { "arquivo": "bosque-alemao.jpg",        "credito": "Foto: AUTOR / Wikimedia Commons (LICENÇA)" }
+}
