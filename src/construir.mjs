@@ -231,6 +231,7 @@ paginas.push(pagina(`
       <div><span class="ico">${ic('clock', 22)}</span><span><small>Data de referência</small><b>novembro de 2026</b></span></div>
       <div><span class="ico">${ic('chart', 22)}</span><span><small>Comparação de</small><b>três orçamentos</b></span></div>
       <div><span class="ico">${ic('tag', 22)}</span><span><small>Valores</small><b>estimados</b></span></div>
+      <div class="largo"><span class="ico">${ic('users', 22)}</span><span><small>Alunos</small><b>Gabrielly Silva • Laryssa de Cássia • Gustavo Henrique • Lara Stefany</b></span></div>
     </div>
   </div>`, { capa: true }));
 
@@ -392,7 +393,7 @@ async function renderizarEMedir(paginas) {
     const mm = (px) => Math.round((px * 25.4) / 96);
     const out = [];
     document.querySelectorAll('.page').forEach((pg, i) => {
-      const c = pg.querySelector('.content');
+      const c = pg.querySelector('.content') || pg.querySelector('.corpo');
       if (!c) { out.push({ pagina: i + 1, capa: true }); return; }
       const cr = c.getBoundingClientRect();
       let maxB = cr.top;
