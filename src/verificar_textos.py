@@ -28,6 +28,8 @@ SUBSTITUIDOS = {
     "245,83", "425,00", "716,67", "491,67", "850,00", "1.433,33",
     # Ingresso do Museu Oscar Niemeyer trocado por "Gratuito" a pedido do grupo:
     "36", "18", "inteira", "meia",
+    # Parque Barigui substituído pelo Mercado Municipal a pedido do grupo:
+    "Barigui", "Lago,", "capivaras.", "verdes", "áreas",
 }
 
 orig, novo = tokens(texto(ORIGINAL)), tokens(texto(NOVO))

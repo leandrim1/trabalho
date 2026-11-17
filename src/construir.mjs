@@ -175,7 +175,7 @@ const ATRACOES = [
   ['opera-de-arame', 'Ópera de Arame', 'Teatro construído com estrutura metálica, cercado por natureza.'],
   ['parque-tangua', 'Parque Tanguá', 'Conhecido por seus jardins, mirantes e paisagens.'],
   ['museu-oscar-niemeyer', 'Museu Oscar Niemeyer', 'Museu conhecido por sua arquitetura moderna.'],
-  ['parque-barigui', 'Parque Barigui', 'Área verde ideal para caminhadas e lazer.'],
+  ['mercado-municipal', 'Mercado Municipal', 'Bancas de alimentos, produtos regionais e gastronomia local.'],
   ['bosque-alemao', 'Bosque Alemão', 'Espaço de natureza, cultura e histórias infantis.'],
 ];
 
@@ -265,7 +265,7 @@ paginas.push(pagina(content(`
 // 3 — Conhecendo Curitiba
 paginas.push(pagina(content(`
   ${sec(`<h2>Conhecendo Curitiba</h2>
-    <p>Curitiba é conhecida por seus parques, áreas verdes, arquitetura, museus e espaços culturais. Entre os pontos turísticos mais conhecidos estão o Jardim Botânico, a Ópera de Arame, o Parque Tanguá, o Museu Oscar Niemeyer, o Parque Barigui e o Bosque Alemão.</p>`, 'margin-bottom:6mm')}
+    <p>Curitiba é conhecida por seus parques, áreas verdes, arquitetura, museus e espaços culturais. Entre os pontos turísticos mais conhecidos estão o Jardim Botânico, a Ópera de Arame, o Parque Tanguá, o Museu Oscar Niemeyer, o Mercado Municipal e o Bosque Alemão.</p>`, 'margin-bottom:6mm')}
   <div class="galeria">${ATRACOES.map(([slug, nome, desc]) =>
     `<div class="gcard">${foto(slug, nome)}<h3>${nome}</h3><p>${desc}</p></div>`).join('')}</div>
 `)));
@@ -308,7 +308,7 @@ paginas.push(pagina(content(`
       <tbody>
         <tr><td class="rot">Jardim Botânico</td><td><span class="badge-g">Gratuito</span></td><td>Estufa, jardins e caminhos para passeio.</td></tr>
         <tr><td class="rot">Parque Tanguá</td><td><span class="badge-g">Gratuito</span></td><td>Mirante, jardins, lago e paisagem.</td></tr>
-        <tr><td class="rot">Parque Barigui</td><td><span class="badge-g">Gratuito</span></td><td>Lago, áreas verdes e capivaras.</td></tr>
+        <tr><td class="rot">Mercado Municipal</td><td><span class="badge-g">Gratuito</span></td><td>Bancas de alimentos e produtos regionais.</td></tr>
         <tr><td class="rot">Museu Oscar Niemeyer</td><td><span class="badge-g">Gratuito</span></td><td>Exposições de arte e arquitetura.</td></tr>
         <tr><td class="rot">Ópera de Arame</td><td><span class="nw">R$ 30 inteira /</span> <span class="nw">R$ 15 meia</span></td><td>Teatro de estrutura metálica e área natural.</td></tr>
       </tbody></table>`)}

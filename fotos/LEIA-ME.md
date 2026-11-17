@@ -11,7 +11,7 @@ quadro rotulado **"Fotografia pendente"** — nada é inventado nem substituído
 | `museu-oscar-niemeyer` | Galeria + miniatura do 2º dia                            |
 | `opera-de-arame`       | Galeria + miniatura do 3º dia                            |
 | `parque-tangua`        | Galeria + miniatura do 4º dia                            |
-| `parque-barigui`       | Galeria                                                  |
+| `mercado-municipal`    | Galeria                                                  |
 | `bosque-alemao`        | Galeria + miniatura do 5º dia                            |
 
 Requisitos: fotografia real do local correto, horizontal, boa resolução (≥ 1600 px de largura),
@@ -25,8 +25,8 @@ Depois de colocar as fotos: `node src/construir.mjs` regenera o PDF.
 As seis fotografias foram fornecidas pelo grupo e já estão em uso (`fotos.json`).
 - **Jardim Botânico**: 640 × 480 px. Boa na galeria, mas fica macia se a capa for impressa em A4
   (≈ 77 dpi). Para impressão, troque por uma versão ≥ 1600 px de largura.
-- **Parque Barigui**: foto vertical com a assinatura "AlexandreKamimura" na própria imagem;
-  o recorte da galeria mantém a assinatura visível.
+- **Mercado Municipal**: 678 x 452 px, substituiu o Parque Barigui a pedido do grupo (nov/2026).
+  O arquivo `parque-barigui.jpg` continua na pasta, sem uso, caso queiram voltar atrás.
 - Nenhum crédito/licença foi cadastrado, pois a autoria das imagens não foi informada
   (não foi inventada). Se forem usadas fora do uso escolar, confirme a autoria e preencha `credito`.
 - A capa reaproveita a foto do Jardim Botânico; as miniaturas do roteiro reaproveitam as da galeria.
