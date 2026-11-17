@@ -182,7 +182,7 @@ const ATRACOES = [
 const ROTEIRO = [
   ['1º', 'Jardim Botânico', 'Conhecer a estufa, os jardins e aproveitar para tirar fotografias.', 'jardim-botanico'],
   ['2º', 'Museu Oscar Niemeyer', 'Visitar as exposições e observar a arquitetura moderna do museu.', 'museu-oscar-niemeyer'],
-  ['3º', 'Ópera de Arame', 'Conhecer o teatro e aproveitar a paisagem natural ao redor.', 'opera-de-arame'],
+  ['3º', 'Mercado Municipal', 'Conhecer as bancas, provar comidas típicas e comprar produtos regionais.', 'mercado-municipal'],
   ['4º', 'Parque Tanguá', 'Passear pelos jardins e apreciar o pôr do sol no mirante.', 'parque-tangua'],
   ['5º', 'Centro Histórico e Bosque Alemão', 'Conhecer construções históricas, feiras de artesanato e espaços culturais.', 'bosque-alemao'],
 ];

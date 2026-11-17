@@ -30,6 +30,8 @@ SUBSTITUIDOS = {
     "36", "18", "inteira", "meia",
     # Parque Barigui substituído pelo Mercado Municipal a pedido do grupo:
     "Barigui", "Lago,", "capivaras.", "verdes", "áreas",
+    # 3º dia do roteiro: Ópera de Arame trocada pelo Mercado Municipal:
+    "teatro", "paisagem", "natural", "redor.",
 }
 
 orig, novo = tokens(texto(ORIGINAL)), tokens(texto(NOVO))
