@@ -27,20 +27,20 @@ const ORC = [
 
 const DESPESAS = [
   ['Transporte ida e volta', 700, 700, 700],
-  ['Hospedagem (4 noites)', 350, 900, 1750],
-  ['Alimentação', 300, 600, 1100],
+  ['Hospedagem (4 noites)', 400, 600, 750],
+  ['Alimentação', 300, 400, 500],
   ['Transporte local', 75, 150, 300],
-  ['Passeios', 50, 200, 450],
+  ['Passeios', 325, 400, 550],
 ];
-const TOTAL_PESSOA_TXT = ['R$ 1.475', 'R$ 2.550', 'R$ 4.300'];
-const TOTAL_PESSOA = [1475, 2550, 4300];
-const TOTAL_CASAL_TXT = ['R$ 2.950', 'R$ 5.100', 'R$ 8.600'];
-const TOTAL_CASAL = [2950, 5100, 8600];
+const TOTAL_PESSOA_TXT = ['R$ 1.800', 'R$ 2.250', 'R$ 2.800'];
+const TOTAL_PESSOA = [1800, 2250, 2800];
+const TOTAL_CASAL_TXT = ['R$ 3.600', 'R$ 4.500', 'R$ 5.600'];
+const TOTAL_CASAL = [3600, 4500, 5600];
 const PARCELAS = [
   // [à vista pessoa, 6x pessoa, 6x casal]
-  ['R$ 1.475', '6x R$ 245,83', '6x R$ 491,67'],
-  ['R$ 2.550', '6x R$ 425,00', '6x R$ 850,00'],
-  ['R$ 4.300', '6x R$ 716,67', '6x R$ 1.433,33'],
+  ['R$ 1.800', '6x R$ 300,00', '6x R$ 600,00'],
+  ['R$ 2.250', '6x R$ 375,00', '6x R$ 750,00'],
+  ['R$ 2.800', '6x R$ 466,67', '6x R$ 933,33'],
 ];
 
 const brl = (n) => 'R$ ' + n.toLocaleString('pt-BR');
@@ -149,7 +149,7 @@ function graficoHorizontal(titulo, valores, textos) {
 }
 
 function graficoCasal() {
-  const max = 8600;
+  const max = Math.max(...TOTAL_CASAL);
   const alturaMax = 37; // mm disponíveis para a maior coluna
   const grupos = ORC.map((o, i) => {
     const h1 = (TOTAL_PESSOA[i] / max) * alturaMax;
