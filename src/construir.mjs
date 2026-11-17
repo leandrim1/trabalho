@@ -308,7 +308,7 @@ paginas.push(pagina(content(`
         <tr><td class="rot">Jardim Botânico</td><td><span class="badge-g">Gratuito</span></td><td>Estufa, jardins e caminhos para passeio.</td></tr>
         <tr><td class="rot">Parque Tanguá</td><td><span class="badge-g">Gratuito</span></td><td>Mirante, jardins, lago e paisagem.</td></tr>
         <tr><td class="rot">Parque Barigui</td><td><span class="badge-g">Gratuito</span></td><td>Lago, áreas verdes e capivaras.</td></tr>
-        <tr><td class="rot">Museu Oscar Niemeyer</td><td><span class="nw">R$ 36 inteira /</span> <span class="nw">R$ 18 meia</span></td><td>Exposições de arte e arquitetura.</td></tr>
+        <tr><td class="rot">Museu Oscar Niemeyer</td><td><span class="badge-g">Gratuito</span></td><td>Exposições de arte e arquitetura.</td></tr>
         <tr><td class="rot">Ópera de Arame</td><td><span class="nw">R$ 30 inteira /</span> <span class="nw">R$ 15 meia</span></td><td>Teatro de estrutura metálica e área natural.</td></tr>
       </tbody></table>`)}
 `)));

@@ -26,6 +26,8 @@ SUBSTITUIDOS = {
     "350", "900", "1.750", "1.100", "200", "450", "50", "600",
     "1.475", "2.550", "4.300", "2.950", "5.100", "8.600",
     "245,83", "425,00", "716,67", "491,67", "850,00", "1.433,33",
+    # Ingresso do Museu Oscar Niemeyer trocado por "Gratuito" a pedido do grupo:
+    "36", "18", "inteira", "meia",
 }
 
 orig, novo = tokens(texto(ORIGINAL)), tokens(texto(NOVO))
